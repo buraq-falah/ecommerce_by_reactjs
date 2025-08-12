@@ -1,18 +1,18 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router';
 import Home from './pages/home';
-import NotFound from './pages/notfound';
+import NotFound from './pages/not_found';
+import MainWrapper from './layout/main_wrapper';
 
 const App = () => {
   return (
     <div className="text-red-600 text-2xl font-bold p-4 text-center">
-      {/* Your content goes here */}
-      Hello from the eCommerce App!
-      <p>Welcome to our online store.</p>
       <Router>
         <Routes>
-          <Route path="/" element={<Home/>} />
-          <Route path="*" element={<NotFound/>} />
+          <Route path="/" element={<MainWrapper />}>
+            <Route index element={<Home />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </Router>
     </div>
