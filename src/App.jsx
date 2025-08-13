@@ -6,7 +6,7 @@ import MainWrapper from './layout/main_wrapper';
 
 const App = () => {
   return (
-    <div className="text-red-600 text-2xl font-bold p-4 text-center">
+    <div>
       <Router>
         <Routes>
           <Route path="/" element={<MainWrapper />}>

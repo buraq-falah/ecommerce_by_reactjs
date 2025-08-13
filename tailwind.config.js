@@ -1,10 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-import daisyui from 'daisyui';
+// import daisyui from 'daisyui';
+import flowbite from 'flowbite/plugin';
+import { plugin } from 'postcss';
 export default {
   content: ["./src/**/*.{html,js,jsx,ts,tsx}",
     "./public/index.html"],
   presets: [],
-  darkMode: 'media', // or 'class'
+  darkMode: 'class', // or 'media'
   theme: {
     accentColor: ({ theme }) => ({
       ...theme('colors'),
@@ -1060,7 +1062,7 @@ export default {
       40: '40',
       50: '50',
     },
-  },
-  plugins: [daisyui],
+  plugins: [flowbite/plugin],
+}
 }
 

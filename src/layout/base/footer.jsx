@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer style={{ padding: '1rem', textAlign: 'center', background: '#f5f5f5' }}>
+        <footer className='text-center mt-5 py-3 bg-red-600 text-white text-lg '>
             <p>&copy; {new Date().getFullYear()} Ecommerce. All rights reserved.</p>
         </footer>
     );
