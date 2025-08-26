@@ -1,9 +1,10 @@
 import React from 'react';
-
+import TheMain from '../components/the_main';
+import PopularProducts from '../components/popular_products';
 const Home = () => {
     return (
-        <div className='text-center mt-5'>
-            <h1>Home Page</h1>
+        <div>
+            <PopularProducts />
         </div>
     );
 };
