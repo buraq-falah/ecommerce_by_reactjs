@@ -2,22 +2,24 @@ import { Rating, ThinStar } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
 import React from "react";
 import { FaCartPlus, FaHeart } from "react-icons/fa";
+import calculateDiscountedPrice from "../utils/discount_calculation";
+import { Link } from "react-router";
 const myStyles = {
   itemShapes: ThinStar,
   activeFillColor: '#ffb700',
   inactiveFillColor: '#fbf1a9'
 }
-const single_product = ({title, price, discountPercentage, rating, thumbnail}) => {
+const single_product = ({id, title, price, discountPercentage, rating, thumbnail}) => {
   return (
     <div className="w-full  bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
       <div className="relative">
-        <a href="#">
+        <Link to={`products/${id}/details`}>
           <img
             className="p-8 rounded-t-lg"
             src={thumbnail}
             alt={title}
           />
-        </a>
+        </Link>
         {/* Discount badge */}
         <span className="absolute top-3 right-3 bg-red-600 text-white text-xs font-bold px-2.5 py-1 rounded-lg shadow-md">
           {discountPercentage}%
@@ -40,10 +42,10 @@ const single_product = ({title, price, discountPercentage, rating, thumbnail}) =
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
             {/* Old price */}
-            <span className="text-lg text-gray-500 line-through">$799</span>
+            <span className="text-lg text-gray-500 line-through">{price}</span>
             {/* New price */}
             <span className="text-3xl font-bold text-gray-900 dark:text-white">
-              {price}
+              {calculateDiscountedPrice(price, discountPercentage)}
             </span>
           </div>
 
