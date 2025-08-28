@@ -2,11 +2,20 @@
 // import daisyui from 'daisyui';
 import flowbite from 'flowbite/plugin';
 import { plugin } from 'postcss';
+import flowbiteReact from "flowbite-react/plugin/tailwindcss";
+
 export default {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}",
-    "./public/index.html"],
+  content: [
+    "./src/**/*.{html,js,jsx,ts,tsx}",
+    "./public/index.html",
+    ".flowbite-react\\class-list.json"
+  ],
+
   presets: [],
-  darkMode: 'class', // or 'media'
+
+  // or 'media'
+  darkMode: 'class',
+
   theme: {
     accentColor: ({ theme }) => ({
       ...theme('colors'),
@@ -1063,6 +1072,7 @@ export default {
       50: '50',
     },
   plugins: [flowbite/plugin],
-}
-}
+},
 
+  plugins: [flowbiteReact]
+};
