@@ -9,7 +9,7 @@ const PopularProducts = () => {
   console.log(data)
   return (
     <section>
-      <TheMain title="Popular products" link="/Products"/>
+      <TheMain title="Popular products" link="/Products" showButton={true}/>
     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
       {data?.products?.length > 1 && data?.products?.map((item) => {
         return ( <SingleProduct key={item?.id} {...item}/> )
