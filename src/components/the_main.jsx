@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router'
-const main = ({title, link, showButton}) => {
+const TheMain = ({title, link, showButton}) => {
   return (
    <div className='flex justify-between items-center my-4'>
      <h1 className='text-xl md:text:lg font-semibold'>{title}</h1>
@@ -8,4 +8,4 @@ const main = ({title, link, showButton}) => {
    </div>
   )
 }
-export default main
+export default TheMain

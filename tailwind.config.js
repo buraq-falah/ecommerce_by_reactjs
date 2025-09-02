@@ -17,6 +17,27 @@ export default {
   darkMode: 'class',
 
   theme: {
+    extend: {
+      keyframes: {
+        backInUp: {
+          '0%': {
+            transform: 'translateY(1000px) scale(0.7)',
+            opacity: '0.7'
+          },
+          '80%': {
+            transform: 'translateY(-10px) scale(0.7)',
+            opacity: '0.7'
+          },
+          '100%': {
+            transform: 'translateY(0) scale(1)',
+            opacity: '1'
+          },
+        },
+      },
+      animation: {
+        backInUp: 'backInUp 0.8s ease-out',
+      },
+    },
     accentColor: ({ theme }) => ({
       ...theme('colors'),
       auto: 'auto',
